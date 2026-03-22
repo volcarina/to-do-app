@@ -38,6 +38,9 @@
           <button id="btn-pause">Пауза</button>
           <button id="btn-reset">Сброс</button>
         </div>
+        <div id="progress-track">
+          <div id="progress-bar"></div>
+        </div>
       </div>
       <!-- --- КОНЕЦ ТАЙМЕРА --- -->
 
@@ -46,11 +49,12 @@
       <div id="profile-container">
 
         <div id="avatar-wrapper">
-          <img id="profile-pic" src="assets/default-avatar.png" alt="Фото профиля" />
+          <img id="profile-pic" src="assets/default-avatar.jpg" alt="Фото профиля" />
           <input type="file" id="avatar-upload" accept="image/*" />
           <label for="avatar-upload">Сменить фото</label>
         </div>
 
+        <p id="greeting"></p>
         <p id="profile-name">Ваше имя</p>
         <p id="profile-email">email@example.com</p>
 
@@ -63,6 +67,13 @@
             <span class="stat-label">Осталось</span>
             <span id="uncompleted-counter">0</span>
           </div>
+        </div>
+        <div id="mood-picker">
+          <span class="mood" data-mood="😴">😴</span>
+          <span class="mood" data-mood="😐">😐</span>
+          <span class="mood" data-mood="🙂">🙂</span>
+          <span class="mood" data-mood="😄">😄</span>
+          <span class="mood" data-mood="🔥">🔥</span>
         </div>
 
       </div>

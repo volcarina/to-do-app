@@ -228,6 +228,22 @@ body {
   background: var(--accent-dark);
 }
 
+#progress-track {
+  background: #e0e0e0;
+  border-radius: 99px;
+  height: 6px;
+  overflow: hidden;
+  margin: 8px 0;
+}
+
+#progress-bar {
+  height: 100%;
+  background: var(--accent-light);
+  border-radius: 99px;
+  width: 100%;
+  transition: width 1s linear;
+}
+
 /* === ПРОФИЛЬ И СТАТИСТИКА === */
 #profile-container {
   border-top: 6px solid #bce295ef;
@@ -333,6 +349,37 @@ body {
   font-weight: bold;
   display: block;
   color: #1b1b1b;
+}
+
+#mood-picker {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+  padding: 10px 14px;
+  background: var(--accent-light);
+  border-radius: 12px;
+}
+
+.mood {
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 6px 8px;
+  transition: transform 0.15s, background 0.15s;
+  line-height: 1;
+  user-select: none;
+}
+
+.mood:hover {
+  transform: scale(1.25);
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.mood.active {
+  transform: scale(1.35);
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
 }
 
 /* === АДАПТИВНОСТЬ === */

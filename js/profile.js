@@ -45,6 +45,8 @@ function makeEditable(element, storageKey) {
       element.textContent = newValue;
       localStorage.setItem(storageKey, newValue);
       input.replaceWith(element);
+
+      updateGreeting();
     }
 
     input.addEventListener("blur", save);
@@ -71,8 +73,9 @@ function updateStats() {
 
 }
 
-//  --- ЗАГРУЗКА СОХРАНЁННЫХ ДАННЫХ ---
+//  --- ЗАГРУЗКА ПРОФИЛЯ ---
 function loadProfile() {
+  const savedMood  = localStorage.getItem("mood");
   const savedName  = localStorage.getItem("profileName");
   const savedEmail = localStorage.getItem("profileEmail");
   const savedPic   = localStorage.getItem("profilePic");
@@ -80,4 +83,31 @@ function loadProfile() {
   if (savedName)  profileName.textContent  = savedName;
   if (savedEmail) profileEmail.textContent = savedEmail;
   if (savedPic)   profilePic.src           = savedPic;
+  if (savedMood) {
+    document.querySelectorAll(".mood").forEach(btn => {
+      btn.classList.toggle("active", btn.dataset.mood === savedMood);
+    });
+  }
+
+   updateGreeting();
 }
+
+//  --- ПРИВЕТСТВИЕ ---
+function updateGreeting() {
+  const hour = new Date().getHours();
+  const greeting = hour < 12 ? "Доброе утро"
+                 : hour < 18 ? "Добрый день"
+                 :              "Добрый вечер";
+
+  const name = document.getElementById("profile-name").textContent;
+  document.getElementById("greeting").textContent = `${greeting}, ${name}!`;
+}
+
+//  --- ВЫБОР НАСТРОЕНИЯ ---
+document.querySelectorAll(".mood").forEach(btn => {
+  btn.addEventListener("click", function () {
+    document.querySelectorAll(".mood").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    localStorage.setItem("mood", btn.dataset.mood);
+  });
+});

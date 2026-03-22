@@ -18,6 +18,10 @@ function updateDisplay() {
   timerDisplay.textContent = `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
 
   timerDisplay.classList.toggle("danger", totalSeconds <= 10 && totalSeconds > 0);
+
+  const totalDuration = POMODORO_MINUTES * 60;
+  const percent = (totalSeconds / totalDuration) * 100;
+  document.getElementById("progress-bar").style.width = percent + "%";
 }
 
 // --- СТАРТ ---
@@ -71,12 +75,4 @@ updateDisplay();
 //     После 25 мин → 5 мин перерыв → снова 25 мин и т.д.
 //     Заведи переменную cycleCount, при каждом завершении увеличивай её.
 //     После 4 циклов — длинный перерыв (15 мин).
-//
-//  2. Кастомное время
-//     Добавь <input type="number"> чтобы пользователь мог
-//     сам задать длину сессии. Читай: parseInt(), isNaN()
-//
-//  3. Прогресс-бар
-//     Отображай сколько времени осталось визуально.
-//     Читай: CSS custom properties + transition на ширине элемента.
 // ============================================================
