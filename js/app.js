@@ -1,8 +1,7 @@
-document.addEventListener("DOMContentLoaded", function () {
-  console.log("Приложение запущено");
+document.addEventListener('DOMContentLoaded', function () {
+  console.log('Приложение запущено')
 
-  loadProfile();
-  loadTasks();
-  updateDisplay();
-});
-
+  loadProfile()
+  loadTasks()
+  updateDisplay()
+})

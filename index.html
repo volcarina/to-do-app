@@ -1,93 +1,81 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TO-DO App</title>
-  <link rel="stylesheet" href="css/style.css" />
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TO-DO App</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div id="app-wrapper">
+      <!-- ==== ЛЕВАЯ КОЛОНКА ==== -->
+      <div id="left-panel">
+        <h1>Мои задачи</h1>
 
-  <div id="app-wrapper">
+        <div id="todo-form">
+          <input type="text" id="input-box" placeholder="Новая задача..." />
+          <button id="input-button">Добавить</button>
+        </div>
 
-    <!-- ==== ЛЕВАЯ КОЛОНКА ==== -->
-    <div id="left-panel">
-
-      <h1>Мои задачи</h1>
-
-      <div id="todo-form">
-        <input type="text" id="input-box" placeholder="Новая задача..." />
-        <button id="input-button">Добавить</button>
+        <ul id="list-container"></ul>
       </div>
+      <!-- ==== КОНЕЦ ЛЕВОЙ КОЛОНКИ ==== -->
 
-      <ul id="list-container"></ul>
-
-    </div>
-    <!-- ==== КОНЕЦ ЛЕВОЙ КОЛОНКИ ==== -->
-
-
-    <!-- ==== ПРАВАЯ КОЛОНКА ==== -->
-    <div id="right-panel">
-
-      <!-- --- ТАЙМЕР --- -->
-      <div id="timer-container">
-        <h2>Помодоро</h2>
-        <div id="timer-display">25:00</div>
-        <div id="timer-controls">
-          <button id="btn-start">Старт</button>
-          <button id="btn-pause">Пауза</button>
-          <button id="btn-reset">Сброс</button>
-        </div>
-        <div id="progress-track">
-          <div id="progress-bar"></div>
-        </div>
-      </div>
-      <!-- --- КОНЕЦ ТАЙМЕРА --- -->
-
-
-      <!-- --- ПРОФИЛЬ И СТАТИСТИКА --- -->
-      <div id="profile-container">
-
-        <div id="avatar-wrapper">
-          <img id="profile-pic" src="assets/default-avatar.jpg" alt="Фото профиля" />
-          <input type="file" id="avatar-upload" accept="image/*" />
-          <label for="avatar-upload">Сменить фото</label>
-        </div>
-
-        <p id="greeting"></p>
-        <p id="profile-name">Ваше имя</p>
-        <p id="profile-email">email@example.com</p>
-
-        <div id="stats">
-          <div class="stat-item">
-            <span class="stat-label">Выполнено</span>
-            <span id="completed-counter">0</span>
+      <!-- ==== ПРАВАЯ КОЛОНКА ==== -->
+      <div id="right-panel">
+        <!-- --- ТАЙМЕР --- -->
+        <div id="timer-container">
+          <h2>Таймер Помодоро</h2>
+          <div id="timer-display">25:00</div>
+          <div id="timer-controls">
+            <button id="btn-start">Старт</button>
+            <button id="btn-pause">Пауза</button>
+            <button id="btn-reset">Сброс</button>
           </div>
-          <div class="stat-item">
-            <span class="stat-label">Осталось</span>
-            <span id="uncompleted-counter">0</span>
+          <div id="progress-track">
+            <div id="progress-bar"></div>
           </div>
         </div>
-        <div id="mood-picker">
-          <span class="mood" data-mood="😴">😴</span>
-          <span class="mood" data-mood="😐">😐</span>
-          <span class="mood" data-mood="🙂">🙂</span>
-          <span class="mood" data-mood="😄">😄</span>
-          <span class="mood" data-mood="🔥">🔥</span>
+        <!-- --- КОНЕЦ ТАЙМЕРА --- -->
+
+        <!-- --- ПРОФИЛЬ И СТАТИСТИКА --- -->
+        <div id="profile-container">
+          <p id="greeting"></p>
+          <div id="avatar-wrapper">
+            <img id="profile-pic" src="assets/default-avatar.jpg" alt="Фото профиля" />
+            <input type="file" id="avatar-upload" accept="image/*" />
+            <label for="avatar-upload">Сменить фото</label>
+          </div>
+
+          <p id="profile-name">Ваше имя</p>
+          <p id="profile-email">email@example.com</p>
+
+          <div id="stats">
+            <div class="stat-item">
+              <span class="stat-label">Выполнено</span>
+              <span id="completed-counter">0</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Осталось</span>
+              <span id="uncompleted-counter">0</span>
+            </div>
+          </div>
+          <div id="mood-picker">
+            <span class="mood" data-mood="😴">😴</span>
+            <span class="mood" data-mood="😐">😐</span>
+            <span class="mood" data-mood="🙂">🙂</span>
+            <span class="mood" data-mood="😄">😄</span>
+            <span class="mood" data-mood="🔥">🔥</span>
+          </div>
         </div>
-
+        <!-- --- КОНЕЦ ПРОФИЛЯ --- -->
       </div>
-      <!-- --- КОНЕЦ ПРОФИЛЯ --- -->
-
+      <!-- ==== КОНЕЦ ПРАВОЙ КОЛОНКИ ==== -->
     </div>
-    <!-- ==== КОНЕЦ ПРАВОЙ КОЛОНКИ ==== -->
 
-  </div>
-
-  <script src="js/profile.js"></script>
-  <script src="js/timer.js"></script>
-  <script src="js/tasks.js"></script>
-  <script src="js/app.js"></script>
-
-</body>
+    <script src="js/profile.js"></script>
+    <script src="js/timer.js"></script>
+    <script src="js/tasks.js"></script>
+    <script src="js/app.js"></script>
+  </body>
 </html>
