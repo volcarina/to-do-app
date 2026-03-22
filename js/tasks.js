@@ -117,5 +117,3 @@ inputBox.addEventListener("keydown", function (event) {
     addTask();
   }
 });
-
-loadTasks();
